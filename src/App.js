@@ -1,10 +1,11 @@
-import './App.css';
+import "./App.css";
+import Header from "./component/Header";
 
 function App() {
   return (
-    <div className="App">
-      <h1>This is the Fundit Fund Raising Page</h1>
-    </div>
+    <section className="">
+      <Header />
+    </section>
   );
 }
 
