@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
   return (
     <header className="bg-white">
-      <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-8 lg:px-10">
+      <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4">
         <a className="text-black text-2xl font-semibold" href="/">
           <span className="">Fundit</span>
         </a>
