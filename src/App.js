@@ -4,6 +4,7 @@ import Banner from "./component/Banner";
 import { Faq } from "./component/Faq";
 import Donate from "./component/Donate";
 import Footer from "./component/Footer";
+import Reward from "./component/Reward";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
         </div>
         <div className="col-span-5 lg:col-span-3">
           <Faq />
+        </div>
+        <div className="col-span-5 lg:col-span-3">
+          <Reward />
         </div>
       </section>
       <div className="col-span-5">

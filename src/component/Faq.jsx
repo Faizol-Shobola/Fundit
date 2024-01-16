@@ -12,7 +12,7 @@ const Item = ({ title, children }) => {
         className="flex items-center justify-between w-full p-4 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <p className="text-lg font-medium">{title}</p>
+        <p className="text-lg text-left font-medium">{title}</p>
         <div className="flex items-center justify-center w-8 h-8 border rounded-full">
           <svg
             viewBox="0 0 24 24"
@@ -46,9 +46,9 @@ export const Faq = () => {
   return (
     // <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:py-16">
     <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
-      <div class="flex flex-col mb-16 sm:text-center">
-        <div class="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">
-          <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+      <div class="flex flex-col my-10 lg:mb-10 lg:mt-5">
+        <div class="max-w-xl md:mx-auto lg:max-w-2xl">
+          <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl">
             <span class="relative">The</span>
             quick, brown fox jumps over a lazy dog
           </h2>
