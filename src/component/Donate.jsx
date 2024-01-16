@@ -1,31 +1,45 @@
 import React from 'react'
 
 const Donate = () => {
+
+    const totalGoal = 500;
+    const moneyRealized = 260;
+    const percentageDonated = ((moneyRealized / totalGoal) * 100).toFixed(1);
+
   return (
     <div className="mx-auto w-full md:w-auto px-4">
         <div className="widget border border-black mx-auto w-full lg:max-w-[400px] p-5">
         <div>
             <span id="ProgressLabel" className="sr-only">
-            Loading
+                Loading
             </span>
             <span className="flex pb-3">
             <p className="text-2xl font-medium text-gray-900 px-2">
-                $240.94
+                {/* Amount donated so far */}
+                <span>${moneyRealized}</span>
                 <span className="pl-1 text-base text-gray-500">
-                USD raised of $240.94 goal
+                USD raised of 
+                {/* Total amount to be raised */}
+                <span>${totalGoal} goal</span>
                 </span>
             </p>
             </span>
+            {/* Progress bar indicating 100% */}
             <span
-            role="progressbar"
-            aria-labelledby="ProgressLabel"
-            aria-valuenow="75"
-            className="block rounded-full bg-gray-200"
+                role="progressbar"
+                aria-labelledby="ProgressLabel"
+                aria-valuenow="75"
+                className="block rounded-full bg-gray-200"
             >
-            <span
-                className="block h-3 rounded-full bg-black"
-                style={{ width: "75%" }}
-            ></span>
+                {/* Progress bar indicating the percentage of money donated so far */}
+                <span
+                    className="block h-3 rounded-full bg-black"
+                    style={{
+                        width: `${percentageDonated}%`,
+                        animation: "progressAnimation 1.5s linear forwards",
+                    }}
+                >
+                </span>
             </span>
         </div>
 
@@ -51,7 +65,8 @@ const Donate = () => {
 
                 <div>
                 <p className="text-2xl font-medium text-gray-900">
-                    $240.94
+                    {/* Total number of people that has donated so far */}
+                    120
                 </p>
                 <p className="text-sm text-gray-500">Donated</p>
                 </div>
@@ -79,7 +94,8 @@ const Donate = () => {
 
                 <div>
                 <p className="text-2xl font-medium text-gray-900">
-                    $240.94
+                    {/* Percentege of donation so far */}
+                    {percentageDonated}%
                 </p>
                 <p className="text-sm text-gray-500">Donation</p>
                 </div>
