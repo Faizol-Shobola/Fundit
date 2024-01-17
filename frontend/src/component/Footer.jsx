@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import MobileModal from "./MobileModal";
+import MobileModal from "./Modals/MobileModal";
 
 const Footer = () => {
 

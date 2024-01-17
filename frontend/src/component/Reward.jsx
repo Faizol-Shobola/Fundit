@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import Form from "./StripeIntegration";
+
 
 export const Prize = ({ title, price, aim }) => {
   return (
@@ -23,13 +24,7 @@ export const Prize = ({ title, price, aim }) => {
 };
 
 const Reward = () => {
-
-const [currency, setCurrency] = useState("USD");
-
-const handleCurrencyChange = (event) => {
-  setCurrency(event.target.value);
-};
-
+  
   return (
     <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-4">
@@ -40,40 +35,7 @@ const handleCurrencyChange = (event) => {
             </h2>
 
             <div className="mt-4 md:mt-8  w-full">
-              <form action="#" className="flex flex-wrap gap-4">
-                <div className="w-full flex border border-white bg-transparent">
-                  <select
-                    id="currency"
-                    name="currency"
-                    value={currency}
-                    onChange={handleCurrencyChange}
-                    className=" px-2 py-3 md:px-3 md:py-4 text-white text-lg lg:text-2xl font-semibold shadow-sm transition bg-transparent focus:outline-none"
-                  >
-                    <option value="USD" className="bg-black text-white">
-                      USD
-                    </option>
-                    <option value="EUR" className="bg-black text-white">
-                      EUR
-                    </option>
-                    <option value="GBP" className="bg-black text-white">
-                      GBP
-                    </option>
-                  </select>
-                  <div className="relative flex-1 flex-grow">
-                    <input
-                      type="text"
-                      // placeholder="Email address"
-                      className="w-full pe-12 lg:pe-16 px-4 py-3  md:py-4 text-white text-lg md:text-xl lg:text-3xl font-semibold text-right shadow-sm transition bg-transparent focus:outline-none"
-                    />
-                    <p className="absolute inset-y-0 end-0 grid place-content-center px-2 py-3 md:px-3 md:py-4 text-white text-xl md:text-2xl lg:text-4xl text-semibold">
-                      .00
-                    </p>
-                  </div>
-                </div>
-                <button className="inline-block border w-full border-white bg-white px-12 py-3 text-base font-medium text-black transition hover:bg-transparent hover:text-white">
-                  Donate Now
-                </button>
-              </form>
+             <Form />
             </div>
           </div>
         </div>
