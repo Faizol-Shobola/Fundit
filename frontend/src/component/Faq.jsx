@@ -1,4 +1,5 @@
 import { useState } from "react";
+import jsonData from '../Api/data.json';
 
 const Item = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,38 +44,29 @@ const Item = ({ title, children }) => {
 
 export const Faq = () => {
     const [isOpen, setIsOpen] = useState(false);
+    
+    const { faq } = jsonData;
+
+  
   return (
     // <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:py-16">
     <div class="max-w-xl sm:mx-auto lg:max-w-2xl px-4">
       <div class="flex flex-col my-10 lg:mb-10 lg:mt-5">
         <div class="max-w-xl md:mx-auto lg:max-w-2xl">
           <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl">
-            <span class="relative">The</span>
-            quick, brown fox jumps over a lazy dog
+            {faq.title}
           </h2>
           <p class="text-base text-gray-700 md:text-lg">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
+            {faq.subtitle}
           </p>
         </div>
       </div>
       <div class="space-y-4">
-        <Item title="The quick, brown fox jumps over a lazy dog?">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque rem aperiam, eaque ipsa quae.
-        </Item>
-        <Item title="The first mate and his Skipper too will do?">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque rem aperiam, eaque ipsa quae.
-        </Item>
-        <Item title="Is the Space Pope reptilian!?">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque rem aperiam, eaque ipsa quae.
-        </Item>
-        <Item title="How much money you got on you?">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque rem aperiam, eaque ipsa quae.
-        </Item>
+        {faq.faqs.map((item, index) => (
+          <Item key={index} title={item.question}>
+            {item.answer}
+          </Item>
+        ))}
 
         {/* FORM */}
         <div className="border rounded shadow-sm">
@@ -85,8 +77,8 @@ export const Faq = () => {
             className="flex items-center justify-between w-full p-4 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <p className="text-lg font-medium">
-              Suhbscribe to the mailing list
+            <p className="text-left text-lg font-medium">
+              Subscribe to the mailing list
             </p>
             <div className="flex items-center justify-center w-8 h-8 border rounded-full">
               <svg

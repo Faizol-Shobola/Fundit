@@ -1,14 +1,18 @@
 import React from 'react';
 import CountUp from 'react-countup';
 
-const Donate = () => {
+import jsonData from '../Api/data.json';
 
-    const totalGoal = 500;
-    const moneyRealized = 400;
+const Donate = ({children}) => {
+
+    const totalGoal = jsonData.donationStatus.goalAmount;
+    const moneyRealized = jsonData.donationStatus.amountRealized;
     const percentageDonated = ((moneyRealized / totalGoal) * 100).toFixed(1);
+    const donorCount = jsonData.donationStatus.donorsCount;
 
   return (
     <div className="mx-auto w-full md:w-auto px-4">
+        {children}
         <div className="widget border border-black mx-auto w-full lg:max-w-[400px] p-5">
         <div>
             <span id="ProgressLabel" className="sr-only">
@@ -21,7 +25,7 @@ const Donate = () => {
                 <span className="pl-1 text-base text-gray-500">
                 USD raised of 
                 {/* Total amount to be raised */}
-                <span>${totalGoal} goal</span>
+                <span className="font-bold text-gray-900"> ${totalGoal} goal</span>
                 </span>
             </p>
             </span>
@@ -80,7 +84,7 @@ const Donate = () => {
                 <div>
                 <p className="text-2xl font-medium text-gray-900">
                     {/* Total number of people that has donated so far */}
-                    <CountUp end={150} duration={2} />
+                    <CountUp end={donorCount} duration={2} />
                 </p>
                 <p className="text-sm text-gray-500">Donated</p>
                 </div>

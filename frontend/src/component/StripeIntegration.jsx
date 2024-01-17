@@ -24,7 +24,7 @@ const Form = () => {
    const handleAmountChange = (event) => {
      const inputValue = event.target.value;
      // Validate if the input is a number
-     if (!/^\d+$/.test(inputValue)) {
+     if (!/^[1-9]\d*$/.test(inputValue)) {
        setError("Please enter a valid number");
      } else {
        setError("");
