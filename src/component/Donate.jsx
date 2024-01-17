@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import CountUp from 'react-countup';
 
 const Donate = () => {
 
     const totalGoal = 500;
-    const moneyRealized = 260;
+    const moneyRealized = 400;
     const percentageDonated = ((moneyRealized / totalGoal) * 100).toFixed(1);
 
   return (
@@ -16,7 +17,7 @@ const Donate = () => {
             <span className="flex pb-3">
             <p className="text-2xl font-medium text-gray-900 px-2">
                 {/* Amount donated so far */}
-                <span>${moneyRealized}</span>
+                <span>$<CountUp end={moneyRealized} duration={2} /></span>
                 <span className="pl-1 text-base text-gray-500">
                 USD raised of 
                 {/* Total amount to be raised */}
@@ -28,7 +29,7 @@ const Donate = () => {
             <span
                 role="progressbar"
                 aria-labelledby="ProgressLabel"
-                aria-valuenow="75"
+                aria-valuenow={percentageDonated}
                 className="block rounded-full bg-gray-200"
             >
                 {/* Progress bar indicating the percentage of money donated so far */}
@@ -36,9 +37,22 @@ const Donate = () => {
                     className="block h-3 rounded-full bg-black"
                     style={{
                         width: `${percentageDonated}%`,
-                        animation: "progressAnimation 1.5s linear forwards",
+                        animation: `
+                          progressAnimation 1.5s linear forwards`,
                     }}
                 >
+                    <style>
+                        {`
+                        @keyframes progressAnimation {
+                            from {
+                            width: 0;
+                            }
+                            to {
+                            width: ${percentageDonated}%;
+                            }
+                        }
+                        `}
+                    </style>
                 </span>
             </span>
         </div>
@@ -66,7 +80,7 @@ const Donate = () => {
                 <div>
                 <p className="text-2xl font-medium text-gray-900">
                     {/* Total number of people that has donated so far */}
-                    120
+                    <CountUp end={150} duration={2} />
                 </p>
                 <p className="text-sm text-gray-500">Donated</p>
                 </div>
@@ -95,7 +109,7 @@ const Donate = () => {
                 <div>
                 <p className="text-2xl font-medium text-gray-900">
                     {/* Percentege of donation so far */}
-                    {percentageDonated}%
+                    <CountUp end={percentageDonated} duration={2} />%
                 </p>
                 <p className="text-sm text-gray-500">Donation</p>
                 </div>
