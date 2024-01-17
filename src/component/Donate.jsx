@@ -1,7 +1,7 @@
 import React from 'react';
 import CountUp from 'react-countup';
 
-const Donate = () => {
+const Donate = ({children}) => {
 
     const totalGoal = 500;
     const moneyRealized = 400;
@@ -9,6 +9,7 @@ const Donate = () => {
 
   return (
     <div className="mx-auto w-full md:w-auto px-4">
+        {children}
         <div className="widget border border-black mx-auto w-full lg:max-w-[400px] p-5">
         <div>
             <span id="ProgressLabel" className="sr-only">
