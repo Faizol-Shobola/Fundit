@@ -45,7 +45,7 @@ export const Faq = () => {
     const [isOpen, setIsOpen] = useState(false);
   return (
     // <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:py-16">
-    <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+    <div class="max-w-xl sm:mx-auto lg:max-w-2xl px-4">
       <div class="flex flex-col my-10 lg:mb-10 lg:mt-5">
         <div class="max-w-xl md:mx-auto lg:max-w-2xl">
           <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl">
