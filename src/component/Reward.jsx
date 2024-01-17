@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 
 export const Prize = ({ title, price, aim }) => {
   return (
-    <div className="group relative block h-40 sm:h-80">
-      <span className="absolute inset-0 border-2 border-dashed border-black"></span>
+   
 
-      <div className="relative flex h-full transform items-end border border-black bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
-        <div className="absolute p-4 transition-opacity group-hover:relative sm:p-6 lg:p-8 lg:px-4">
+    <div className="flex h-full transform items-end border border-black bg-white transition-transform hover:-translate-x-2 hover:-translate-y-2 hover:shadow-xl">
+        <div className="p-4 pt-8 transition-opacity sm:p-6 sm:pt-10 ">
           
           <h3 className="mt-4 text-xl capitalize font-medium sm:text-2xl">
             {title}
@@ -18,8 +17,8 @@ export const Prize = ({ title, price, aim }) => {
           </p>
 
         </div>
-      </div>
     </div>
+     
   );
 };
 
@@ -48,7 +47,7 @@ const handleCurrencyChange = (event) => {
                     name="currency"
                     value={currency}
                     onChange={handleCurrencyChange}
-                    className=" px-3 py-4 text-white text-lg lg:text-2xl font-semibold shadow-sm transition bg-transparent focus:outline-none"
+                    className=" px-2 py-3 md:px-3 md:py-4 text-white text-lg lg:text-2xl font-semibold shadow-sm transition bg-transparent focus:outline-none"
                   >
                     <option value="USD" className="bg-black text-white">
                       USD
@@ -60,14 +59,16 @@ const handleCurrencyChange = (event) => {
                       GBP
                     </option>
                   </select>
-                  <input
-                    type="text"
-                    // placeholder="Email address"
-                    className="px-3 py-4 flex-1 flex-grow text-white text-base lg:text-2xl font-semibold text-right shadow-sm transition bg-transparent focus:outline-none"
-                  />
-                  <p className="px-3 py-4 text-white text-xl md:text-2xl lg:text-4xl text-semibold">
-                    .00
-                  </p>
+                  <div className="relative flex-1 flex-grow">
+                    <input
+                      type="text"
+                      // placeholder="Email address"
+                      className="w-full pe-12 lg:pe-16 px-4 py-3  md:py-4 text-white text-lg md:text-xl lg:text-3xl font-semibold text-right shadow-sm transition bg-transparent focus:outline-none"
+                    />
+                    <p className="absolute inset-y-0 end-0 grid place-content-center px-2 py-3 md:px-3 md:py-4 text-white text-xl md:text-2xl lg:text-4xl text-semibold">
+                      .00
+                    </p>
+                  </div>
                 </div>
                 <button className="inline-block border w-full border-white bg-white px-12 py-3 text-base font-medium text-black transition hover:bg-transparent hover:text-white">
                   Donate Now
@@ -77,21 +78,25 @@ const handleCurrencyChange = (event) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap:10 p-5 md:p-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-8 md:gap:10 p-5 md:p-8">
           <Prize
-            title="bronze tier" price="($10 - $59)"
+            title="bronze tier"
+            price="($10 - $59)"
             aim="Donors in the Bronze Tier will receive a personalized Thank You Email and will be recognized on the Fundraising Page."
           />
           <Prize
-            title="silver tier" price="($60 - $199)"
+            title="silver tier"
+            price="($60 - $199)"
             aim=" Contributors to the Silver Tier will receive an exclusive Digital Badge or Certificate and a Social Media Shoutout."
           />
           <Prize
-            title="gold tier" price="($200 - $999)"
+            title="gold tier"
+            price="($200 - $999)"
             aim=" Those in the Gold Tier will enjoy a customized Thank You Video from the Team and access to exclusive Behind-the-Scenes Content."
           />
           <Prize
-            title="diamond tier" price="($1000 and above)"
+            title="diamond tier"
+            price="($1000 and above)"
             aim=" Supporters in the Diamond Tier will receive special mention in Press Releases or Campaign Materials, along with VIP Access to an Event or Launch."
           />
         </div>
