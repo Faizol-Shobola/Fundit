@@ -62,6 +62,7 @@ const Form = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        setDonate(true);
         setClientSecret(data.clientSecret);
         setIsModalOpen(true);
       })
