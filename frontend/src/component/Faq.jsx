@@ -100,7 +100,7 @@ export const Faq = () => {
           {isOpen && (
             <div className="p-4 pt-0">
               <form action="#" className="sm:flex sm:gap-4">
-                <div className="sm:flex-1">
+                <div className="space-y-4 md:flex flex-wrap gap-5">
                   <label htmlFor="email" className="sr-only">
                     Email
                   </label>
