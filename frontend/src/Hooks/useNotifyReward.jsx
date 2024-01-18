@@ -17,10 +17,11 @@ const useNotifyReward = () => {
               <div className="flex items-start">
                 <div className="ml-3 flex-1">
                   <p className="text-sm font-medium text-gray-900">
-                    {title || "Notification"}
+                    {title || "Notification"} 
+                    <span className='ml-1 text-gray-500'>{donationRange}</span>
                   </p>
                   <p className="mt-1 text-sm text-gray-500">
-                    {message} {donationRange}
+                    {message} 
                   </p>
                 </div>
               </div>
@@ -46,11 +47,11 @@ const useNotifyReward = () => {
       return rewards[randomIndex];
     };
 
-    const intervalTime = Math.random() * (10000 - 7500) + 1000;
+    const intervalTime = Math.random() * (10000 - 7400) + 1000;
     const interval = setInterval(() => {
       const reward = getRandomReward();
-      notify("This is a dynamic message!", {
-        title: reward.title,
+      notify("Thank you for supporting ❤", {
+        title: `💰 ${reward.title}`,
         donationRange: reward.donationRange,
       });
     }, intervalTime);
