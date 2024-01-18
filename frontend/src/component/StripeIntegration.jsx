@@ -28,9 +28,9 @@ const Form = () => {
    };
 
    const handleCloseModal = () => {
+     setDonate(false)
      setIsModalOpen(false);
      setClientSecret("")
-     setDonate(false)
    };
 
    const handleAmountChange = (event) => {
@@ -61,9 +61,9 @@ const Form = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        setDonate(true);
         setClientSecret(data.clientSecret);
         setIsModalOpen(true);
-        setDonate(true);
       })
       .catch((error) => {
         console.error("Error:", error);
