@@ -18,10 +18,9 @@ const Form = () => {
   const [currency, setCurrency] = useState("USD");
   const [amount, setAmount] = useState("");
   const [error, setError] = useState("");
-  const [donate, setDonate] = useState(false)
 
   const [clientSecret, setClientSecret] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
    const handleCurrencyChange = (event) => {
      setCurrency(event.target.value);
@@ -29,7 +28,7 @@ const Form = () => {
 
    const handleCloseModal = () => {
      setIsModalOpen(false);
-     setDonate(true);
+     setClientSecret("")
    };
 
    const handleAmountChange = (event) => {
@@ -61,7 +60,7 @@ const Form = () => {
       .then((res) => res.json())
       .then((data) => {
         setClientSecret(data.clientSecret);
-        setDonate(true);
+        setIsModalOpen(true);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -76,8 +75,8 @@ const Form = () => {
 
   return (
     <div>
-    {/* // Donate Form */}
-      <form onSubmit={handleSubmit}  className="flex flex-wrap gap-4">
+      {/* // Donate Form */}
+      <form onSubmit={handleSubmit} className="flex flex-wrap gap-4">
         <div className="w-full flex border border-white bg-transparent">
           <select
             id="currency"
@@ -87,7 +86,11 @@ const Form = () => {
             className=" px-2 py-3 md:px-3 md:py-4 text-white text-lg lg:text-2xl font-semibold shadow-sm transition bg-transparent focus:outline-none"
           >
             {donationCTA.inputBox.currencySelect.map((currency, index) => (
-              <option key={index} value={currency} className="bg-black text-white">
+              <option
+                key={index}
+                value={currency}
+                className="bg-black text-white"
+              >
                 {currency}
               </option>
             ))}
@@ -114,15 +117,22 @@ const Form = () => {
         {error && <p className="text-red-500">{error}</p>}
       </form>
 
-      {clientSecret && donate  ? (
+      {clientSecret ? (
         <>
-        {isModalOpen && ( <Modal onClose={handleCloseModal}>
-          <h3 className="text-xl font-medium text-black pb-5">Donate {amount} <span className="text-lg">{currency}</span></h3>
-          <Elements stripe={stripePromise} options={options}>
-            <CheckoutForm amount={amount}/>
-          </Elements>
-        </Modal> )}</>
-      ) : <></>}
+          {isModalOpen && (
+            <Modal onClose={handleCloseModal}>
+              <h3 className="text-xl font-medium text-black pb-5">
+                Donate {amount} <span className="text-lg">{currency}</span>
+              </h3>
+              <Elements stripe={stripePromise} options={options}>
+                <CheckoutForm amount={amount} />
+              </Elements>
+            </Modal>
+          )}
+        </>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
