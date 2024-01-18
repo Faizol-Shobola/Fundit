@@ -20,7 +20,7 @@ function App() {
 
 
   return (
-    <section>
+    <section className="scroll-smooth transition">
       <div className="col-span-5">
         <Header />
       </div>
@@ -29,7 +29,7 @@ function App() {
           position="top-right"
           reverseOrder={false}
           toastOptions={{
-              duration: 1000,
+            duration: 1000,
           }}
           containerStyle={{
             top: 100,
@@ -40,9 +40,9 @@ function App() {
         </div>
         <div className="col-span-5 lg:col-span-2 row-span-1  lg:sticky top-3 py-4">
           <Donate>
-          <div>
-            <button onClick={handleClick}>Make me a toast</button>
-          </div>
+            <div>
+              <button onClick={handleClick}>Make me a toast</button>
+            </div>
           </Donate>
         </div>
         <div className="col-span-5 lg:col-span-3">
