@@ -56,9 +56,7 @@ export const Faq = () => {
           <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl">
             {faq.title}
           </h2>
-          <p class="text-base text-gray-700 md:text-lg">
-            {faq.subtitle}
-          </p>
+          <p class="text-base text-gray-700 md:text-lg">{faq.subtitle}</p>
         </div>
       </div>
       <div class="space-y-4">
@@ -112,11 +110,21 @@ export const Faq = () => {
                     placeholder="Email address"
                     className="w-full border border-black bg-white p-3 text-gray-700 shadow-sm transition"
                   />
+
+                  <label htmlFor="email" className="sr-only">
+                    Question
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="What is your question"
+                    className="w-full border border-black bg-white p-3 text-gray-700 shadow-sm transition"
+                  />
                 </div>
 
                 <button
                   type="submit"
-                  className="group mt-4 flex w-full items-center justify-center gap-2 bg-black px-5 py-3 text-white transition sm:mt-0 sm:w-auto"
+                  className="group mt-4 flex w-full items-center justify-center gap-2 bg-black px-5 py-3 text-white transition sm:mt-0"
                 >
                   <span className="text-sm font-medium"> Sign Up </span>
 
