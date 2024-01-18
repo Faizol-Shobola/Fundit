@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 
-import jsonData from '../Api/data.json';
+import jsonData from "../Api/data.json";
 import CheckoutForm from "./CheckoutForm";
 import Modal from "./Modals/PaymentModal";
 
@@ -12,7 +12,6 @@ const stripePromise = loadStripe(
 );
 
 const Form = () => {
-
   const { donationCTA } = jsonData;
 
   const [currency, setCurrency] = useState("USD");
@@ -23,35 +22,35 @@ const Form = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [donate, setDonate] = useState(false);
 
-   const handleCurrencyChange = (event) => {
-     setCurrency(event.target.value);
-   };
+  const handleCurrencyChange = (event) => {
+    setCurrency(event.target.value);
+  };
 
-   const handleCloseModal = () => {
-     setDonate(false)
-     setIsModalOpen(false);
-     setClientSecret("")
-   };
+  const handleCloseModal = () => {
+    setDonate(false);
+    setIsModalOpen(false);
+    setClientSecret("");
+  };
 
-   const handleAmountChange = (event) => {
-     const inputValue = event.target.value;
-     // Validate if the input is a number
-     if (!/^[1-9]\d*$/.test(inputValue)) {
-       setError("Please enter a valid amount");
-     } else {
-       setError("");
-     }
-     setAmount(inputValue);
-   };
+  const handleAmountChange = (event) => {
+    const inputValue = event.target.value;
+    // Validate if the input is a number
+    if (!/^[1-9]\d*$/.test(inputValue)) {
+      setError("Please enter a valid amount");
+    } else {
+      setError("");
+    }
+    setAmount(inputValue);
+  };
 
-   const handleSubmit = async (e) => {
-    e.preventDefault(); 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setDonate(true);
 
-    if(amount === "") {
+    if (amount === "") {
       setError("Please enter a valid amount");
     }
-    
+
     fetch("https://fundit-production.up.railway.app/create-payment-intent", {
       method: "POST",
       headers: {
@@ -69,9 +68,7 @@ const Form = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
-      
-  }
-  
+  };
 
   const options = {
     clientSecret: clientSecret,
@@ -117,7 +114,7 @@ const Form = () => {
         >
           {donate && (
             <svg
-              class="animate-spin h-5 w-5 mr-3 bg-black text-white z-10"
+              class="animate-spin h-5 w-5 mr-3 bg-gray-600 text-white z-10"
               viewBox="0 0 24 24"
             >
               {" "}
