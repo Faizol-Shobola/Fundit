@@ -2,11 +2,11 @@ import CustomShareButton from "../CustomShareButton";
 
 const MobileModal = ({ isOpen, onClose }) => {
 
-  const shareData = {
-    text: "Check out GeeksforGeeks!",
-    url: "https://www.geeksforgeeks.org",
-    title: "GeeksforGeeks",
-  };
+   const shareData = {
+     text: "Fund a charity Program",
+     url: "https://fundit.vercel.app",
+     title: "Fundit",
+   };
 
   return (
     <div
@@ -18,7 +18,7 @@ const MobileModal = ({ isOpen, onClose }) => {
 
           <CustomShareButton shareData={shareData} buttonText="Share" />
 
-          <a className="btn" href="/">
+          <a className="btn" href="#donate">
           Donate
           </a>
         <button

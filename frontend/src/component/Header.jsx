@@ -8,11 +8,11 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const shareData = {
-    text: "Check out GeeksforGeeks!",
-    url: "https://www.geeksforgeeks.org",
-    title: "GeeksforGeeks",
-  };
+   const shareData = {
+     text: "Fund a charity Program",
+     url: "https://fundit.vercel.app",
+     title: "Fundit",
+   };
 
   return (
     <header className="bg-white">
@@ -25,7 +25,7 @@ const Header = () => {
           <nav aria-label="Global" className="hidden md:block">
             <ul className="flex items-center gap-6 text-base">
               <li>
-                <a href=""
+                <a href="/"
                   className="text-gray-500 trasition hover:text-gray-500/75"
                 >
                   How it works
@@ -38,7 +38,7 @@ const Header = () => {
             <div className="sm:flex sm:gap-8">
               <CustomShareButton moreClass={"hidden sm:block"} shareData={shareData} buttonText="Share" />
 
-              <a className="btn" href="/">
+              <a className="btn" href="#donate">
                 Donate
               </a>
             </div>

@@ -7,9 +7,9 @@ import CustomShareButton from './CustomShareButton';
 const Donate = ({children}) => {
 
     const shareData = {
-        text: "Check out GeeksforGeeks!",
-        url: "https://www.geeksforgeeks.org",
-        title: "GeeksforGeeks",
+        text: "Fund a charity Program",
+        url: "https://fundit.vercel.app",
+        title: "Fundit",
     };
 
     const totalGoal = jsonData.donationStatus.goalAmount;
@@ -131,7 +131,7 @@ const Donate = ({children}) => {
         <div className="grid grid-cols-1 gap-4">
             <CustomShareButton shareData={shareData} buttonText="Share" />
 
-            <a className="btn" href="/">
+            <a className="btn" href="#donate">
             Donate
             </a>
         </div>
