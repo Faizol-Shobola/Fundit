@@ -22,9 +22,8 @@ const CheckoutForm = ({amount}) => {
     const result = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "http://localhost:3000/", // Replace with your return URL
+        return_url: "https://funddit.netlify.app", // Replace with your return URL
       },
-      
     });
 
     if (
