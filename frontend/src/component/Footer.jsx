@@ -131,6 +131,9 @@ const Footer = () => {
                     Copyright &copy; 2024. All rights reserved.
                 </p>
                 </div>
+                <div className="bg-gray-100 flex justify-center items-center">
+                    <MobileModal isOpen={isModalOpen} onClose={closeModal} />
+                </div>
             </footer>
         </>
     );
