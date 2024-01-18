@@ -5,7 +5,6 @@ import {
   useElements,
   PaymentElement,
 } from "@stripe/react-stripe-js";
-import notify from "../testnotification";
 
 const CheckoutForm = ({amount}) => {
   const stripe = useStripe();
@@ -24,17 +23,7 @@ const CheckoutForm = ({amount}) => {
       confirmParams: {
         return_url: "https://fundit.vercel.app/", // Replace with your return URL
       },
-    });
-
-    if (
-      result.paymentIntent &&
-      result.paymentIntent.status === "succeeded"
-    ) {
-      notify("Your payment was successful! Thank you for your donation.", {
-        title: "Payment Successful",
-        icon: "✅",
-      });
-    }
+    });  
 
 
     if (result.error) {

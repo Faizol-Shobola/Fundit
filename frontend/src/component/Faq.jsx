@@ -116,11 +116,9 @@ export const Faq = () => {
                   </label>
 
                   <textarea
-                    type="text"
-                    placeholder="What is your question"
+                    placeholder="What is your question.."
                     className="w-full border border-black bg-white p-3 text-gray-700 shadow-sm transition"
                   >
-                    {" "}
                   </textarea>
                 </div>
 
