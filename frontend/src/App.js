@@ -48,7 +48,7 @@ function App() {
         <div className="col-span-5 lg:col-span-3">
           <Faq />
         </div>
-        <div className="col-span-5 lg:col-span-3">
+        <div id="donate" className="col-span-5 lg:col-span-3">
           <Reward />
         </div>
       </section>

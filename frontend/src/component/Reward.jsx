@@ -28,7 +28,7 @@ const Reward = () => {
   const { donationCTA, rewards } = jsonData;
   
   return (
-    <div id="" className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-4">
         <div className="bg-black p-8 md:p-12 lg:px-16 lg:py-20">
           <div className="mx-auto max-w-xl text-center">
