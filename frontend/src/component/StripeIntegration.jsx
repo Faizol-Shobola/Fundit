@@ -50,7 +50,7 @@ const Form = () => {
       setError("Please enter a valid amount");
     }
     
-    fetch("http://localhost:8000/create-payment-intent", {
+    fetch("https://fundit-production.up.railway.app", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const Form = () => {
       .then((res) => res.json())
       .then((data) => {
         setClientSecret(data.clientSecret);
-        setDonate(true)
+        setDonate(true);
       })
       .catch((error) => {
         console.error("Error:", error);
