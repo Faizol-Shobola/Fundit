@@ -99,8 +99,8 @@ export const Faq = () => {
           </button>
           {isOpen && (
             <div className="p-4 pt-0">
-              <form action="#" className="sm:flex sm:gap-4">
-                <div className="space-y-4 md:flex flex-1 flex-grow flex-wrap gap-4">
+              <form action="#" className="space-y-4">
+                <div className="space-y-4">
                   <label htmlFor="email" className="sr-only">
                     Email
                   </label>
@@ -115,33 +115,20 @@ export const Faq = () => {
                     Question
                   </label>
 
-                  <input
+                  <textarea
                     type="text"
                     placeholder="What is your question"
                     className="w-full border border-black bg-white p-3 text-gray-700 shadow-sm transition"
-                  />
+                  >
+                    {" "}
+                  </textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="group mt-4 flex w-full items-center justify-center gap-2 bg-black px-5 py-3 text-white transition sm:mt-0"
+                  className="group mt-4 flex sm:flex-grow sm:flex-1 w-full items-center justify-center gap-2 bg-black px-5 py-3 text-white transition sm:mt-0"
                 >
-                  <span className="text-sm font-medium"> Sign Up </span>
-
-                  <svg
-                    className="h-5 w-5 rtl:rotate-180"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
+                  <span className="text-sm font-medium"> Submit </span>
                 </button>
               </form>
             </div>
