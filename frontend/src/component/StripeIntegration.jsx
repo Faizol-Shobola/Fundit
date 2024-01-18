@@ -36,7 +36,7 @@ const Form = () => {
      const inputValue = event.target.value;
      // Validate if the input is a number
      if (!/^[1-9]\d*$/.test(inputValue)) {
-       setError("Please enter a valid number");
+       setError("Please enter a valid amount");
      } else {
        setError("");
      }
@@ -47,7 +47,7 @@ const Form = () => {
     e.preventDefault(); 
 
     if(amount === "") {
-      setError("Please enter a valid number");
+      setError("Please enter a valid amount");
     }
     
     fetch("http://localhost:8000/create-payment-intent", {
@@ -119,7 +119,7 @@ const Form = () => {
         {isModalOpen && ( <Modal onClose={handleCloseModal}>
           <h3 className="text-xl font-medium text-black pb-5">Donate {amount} <span className="text-lg">{currency}</span></h3>
           <Elements stripe={stripePromise} options={options}>
-            <CheckoutForm />
+            <CheckoutForm amount={amount}/>
           </Elements>
         </Modal> )}</>
       ) : <></>}

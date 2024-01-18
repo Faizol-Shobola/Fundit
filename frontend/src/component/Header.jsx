@@ -75,7 +75,7 @@ const Header = () => {
             <ul className="flex flex-col items-center gap-6 text-base">
               {/* ... your menu items ... */}
               <li>
-                <a href=""
+                <a href="/"
                   className="text-gray-900 trasition hover:text-gray-900/75"
                 >
                   How it works
