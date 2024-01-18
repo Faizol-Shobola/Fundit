@@ -28,9 +28,9 @@ const Form = () => {
    };
 
    const handleCloseModal = () => {
+     setDonate(false)
      setIsModalOpen(false);
      setClientSecret("")
-     setDonate(false)
    };
 
    const handleAmountChange = (event) => {
@@ -46,6 +46,7 @@ const Form = () => {
 
    const handleSubmit = async (e) => {
     e.preventDefault(); 
+    setDonate(true);
 
     if(amount === "") {
       setError("Please enter a valid amount");
@@ -63,7 +64,6 @@ const Form = () => {
       .then((data) => {
         setClientSecret(data.clientSecret);
         setIsModalOpen(true);
-        setDonate(true);
       })
       .catch((error) => {
         console.error("Error:", error);
