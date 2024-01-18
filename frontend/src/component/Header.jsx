@@ -76,7 +76,7 @@ const Header = () => {
               {/* ... your menu items ... */}
               <li>
                 <a href=""
-                  className="text-gray-500 trasition hover:text-gray-500/75"
+                  className="text-gray-900 trasition hover:text-gray-900/75"
                 >
                   How it works
                 </a>
