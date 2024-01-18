@@ -27,7 +27,7 @@ function App() {
             duration: 1000,
           }}
           containerStyle={{
-            top: 100,
+            top: 65,
           }}
         />
         <div className="col-span-5 lg:col-span-3">

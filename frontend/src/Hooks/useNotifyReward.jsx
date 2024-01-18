@@ -47,7 +47,7 @@ const useNotifyReward = () => {
       return rewards[randomIndex];
     };
 
-    const intervalTime = Math.random() * (10000 - 7400) + 1000;
+    const intervalTime = Math.random() * (10000 - 7200) + 1500;
     const interval = setInterval(() => {
       const reward = getRandomReward();
       notify("Thank you for supporting ❤", {
