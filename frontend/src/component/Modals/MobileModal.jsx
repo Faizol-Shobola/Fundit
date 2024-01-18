@@ -2,11 +2,12 @@ import CustomShareButton from "../CustomShareButton";
 
 const MobileModal = ({ isOpen, onClose }) => {
 
-   const shareData = {
-     text: "Fund a charity Program",
-     url: "https://fundit.vercel.app",
-     title: "Fundit",
-   };
+  const shareData = {
+    text: "A Flexible fund raising platform",
+    url: "https://fundit.vercel.app",
+    title: "Fundit - A Flexible fund raising platform",
+  };
+
 
   return (
     <div

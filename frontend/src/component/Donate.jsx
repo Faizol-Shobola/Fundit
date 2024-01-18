@@ -6,11 +6,12 @@ import CustomShareButton from './CustomShareButton';
 
 const Donate = ({children}) => {
 
-    const shareData = {
-        text: "Fund a charity Program",
-        url: "https://fundit.vercel.app",
-        title: "Fundit",
-    };
+  const shareData = {
+    text: "A Flexible fund raising platform",
+    url: "https://fundit.vercel.app",
+    title: "Fundit - A Flexible fund raising platform",
+  };
+
 
     const totalGoal = jsonData.donationStatus.goalAmount;
     const moneyRealized = jsonData.donationStatus.amountRealized;

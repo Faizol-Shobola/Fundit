@@ -9,10 +9,11 @@ const Header = () => {
   };
 
    const shareData = {
-     text: "Fund a charity Program",
+     text: "A Flexible fund raising platform",
      url: "https://fundit.vercel.app",
-     title: "Fundit",
+     title: "Fundit - A Flexible fund raising platform",
    };
+
 
   return (
     <header className="bg-white">
