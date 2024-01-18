@@ -5,6 +5,7 @@ import {
   useElements,
   PaymentElement,
 } from "@stripe/react-stripe-js";
+import notify from "../testnotification";
 
 const CheckoutForm = ({amount}) => {
   const stripe = useStripe();
@@ -15,7 +16,6 @@ const CheckoutForm = ({amount}) => {
     e.preventDefault();
 
     if (!stripe || !elements) {
-      // Stripe.js has not yet loaded.
       return;
     }
 
@@ -24,7 +24,19 @@ const CheckoutForm = ({amount}) => {
       confirmParams: {
         return_url: "http://localhost:3000/", // Replace with your return URL
       },
+      
     });
+
+    if (
+      result.paymentIntent &&
+      result.paymentIntent.status === "succeeded"
+    ) {
+      notify("Your payment was successful! Thank you for your donation.", {
+        title: "Payment Successful",
+        icon: "✅",
+      });
+    }
+
 
     if (result.error) {
       setError(result.error.message);
