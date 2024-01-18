@@ -21,9 +21,15 @@ const Form = () => {
   const [donate, setDonate] = useState(false)
 
   const [clientSecret, setClientSecret] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
    const handleCurrencyChange = (event) => {
      setCurrency(event.target.value);
+   };
+
+   const handleCloseModal = () => {
+     setIsModalOpen(false);
+     setDonate(true);
    };
 
    const handleAmountChange = (event) => {
@@ -109,12 +115,13 @@ const Form = () => {
       </form>
 
       {clientSecret && donate  ? (
-        <Modal modal={false}>
+        <>
+        {isModalOpen && ( <Modal onClose={handleCloseModal}>
           <h3 className="text-xl font-medium text-black pb-5">Donate {amount} <span className="text-lg">{currency}</span></h3>
           <Elements stripe={stripePromise} options={options}>
             <CheckoutForm />
           </Elements>
-        </Modal>
+        </Modal> )}</>
       ) : <></>}
     </div>
   );
