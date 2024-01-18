@@ -52,7 +52,7 @@ export const Faq = () => {
     // <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:py-16">
     <div class="max-w-xl sm:mx-auto lg:max-w-2xl px-4">
       <div class="flex flex-col my-10 lg:mb-10 lg:mt-5">
-        <div class="max-w-xl md:mx-auto lg:max-w-2xl">
+        <div class="max-w-xl lg:max-w-2xl">
           <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl">
             {faq.title}
           </h2>
@@ -110,13 +110,13 @@ export const Faq = () => {
                   <input
                     type="email"
                     placeholder="Email address"
-                    className="w-full rounded-md border-gray-200 bg-white p-3 text-gray-700 shadow-sm transition"
+                    className="w-full border border-black bg-white p-3 text-gray-700 shadow-sm transition"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-black px-5 py-3 text-white transition sm:mt-0 sm:w-auto"
+                  className="group mt-4 flex w-full items-center justify-center gap-2 bg-black px-5 py-3 text-white transition sm:mt-0 sm:w-auto"
                 >
                   <span className="text-sm font-medium"> Sign Up </span>
 

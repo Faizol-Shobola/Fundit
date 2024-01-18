@@ -1,3 +1,4 @@
+import jsonData from '../Api/data.json';
 import Form from "./StripeIntegration";
 
 
@@ -24,6 +25,8 @@ export const Prize = ({ title, price, aim }) => {
 };
 
 const Reward = () => {
+
+  const { donationCTA, rewards } = jsonData;
   
   return (
     <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
@@ -31,7 +34,7 @@ const Reward = () => {
         <div className="bg-black p-8 md:p-12 lg:px-16 lg:py-20">
           <div className="mx-auto max-w-xl text-center">
             <h2 className="text-2xl font-bold text-white md:text-3xl">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit
+              {donationCTA.title}
             </h2>
 
             <div className="mt-4 md:mt-8  w-full">
@@ -41,26 +44,14 @@ const Reward = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-8 md:gap:10 p-5 md:p-8">
+        {rewards.map((reward, index) => (
           <Prize
-            title="bronze tier"
-            price="($10 - $59)"
-            aim="Donors in the Bronze Tier will receive a personalized Thank You Email and will be recognized on the Fundraising Page."
+            key={index}
+            title={reward.title}
+            price={reward.donationRange}
+            aim={reward.content}
           />
-          <Prize
-            title="silver tier"
-            price="($60 - $199)"
-            aim=" Contributors to the Silver Tier will receive an exclusive Digital Badge or Certificate and a Social Media Shoutout."
-          />
-          <Prize
-            title="gold tier"
-            price="($200 - $999)"
-            aim=" Those in the Gold Tier will enjoy a customized Thank You Video from the Team and access to exclusive Behind-the-Scenes Content."
-          />
-          <Prize
-            title="diamond tier"
-            price="($1000 and above)"
-            aim=" Supporters in the Diamond Tier will receive special mention in Press Releases or Campaign Materials, along with VIP Access to an Event or Launch."
-          />
+          ))}
         </div>
       </div>
     </div>

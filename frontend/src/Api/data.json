@@ -34,7 +34,7 @@
     "donationCTA": {
       "title": "Ready to donate?",
       "inputBox": {
-        "currencySelect": ["USD", "EUR", "GBP", "AUD"],
+        "currencySelect": ["USD", "EUR", "GBP"],
         "processButton": "Donate Now"
       }
     },

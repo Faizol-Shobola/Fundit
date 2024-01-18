@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+
+import jsonData from '../Api/data.json';
 import CheckoutForm from "./CheckoutForm";
 import Modal from "./Modals/PaymentModal";
 
@@ -10,15 +12,24 @@ const stripePromise = loadStripe(
 );
 
 const Form = () => {
+
+  const { donationCTA } = jsonData;
+
   const [currency, setCurrency] = useState("USD");
   const [amount, setAmount] = useState("");
   const [error, setError] = useState("");
   const [donate, setDonate] = useState(false)
 
   const [clientSecret, setClientSecret] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
    const handleCurrencyChange = (event) => {
      setCurrency(event.target.value);
+   };
+
+   const handleCloseModal = () => {
+     setIsModalOpen(false);
+     setDonate(true);
    };
 
    const handleAmountChange = (event) => {
@@ -75,15 +86,11 @@ const Form = () => {
             onChange={handleCurrencyChange}
             className=" px-2 py-3 md:px-3 md:py-4 text-white text-lg lg:text-2xl font-semibold shadow-sm transition bg-transparent focus:outline-none"
           >
-            <option value="USD" className="bg-black text-white">
-              USD
-            </option>
-            <option value="EUR" className="bg-black text-white">
-              EUR
-            </option>
-            <option value="GBP" className="bg-black text-white">
-              GBP
-            </option>
+            {donationCTA.inputBox.currencySelect.map((currency, index) => (
+              <option key={index} value={currency} className="bg-black text-white">
+                {currency}
+              </option>
+            ))}
           </select>
           <div className="relative flex-1 flex-grow">
             <input
@@ -108,12 +115,13 @@ const Form = () => {
       </form>
 
       {clientSecret && donate  ? (
-        <Modal modal={false}>
+        <>
+        {isModalOpen && ( <Modal onClose={handleCloseModal}>
           <h3 className="text-xl font-medium text-black pb-5">Donate {amount} <span className="text-lg">{currency}</span></h3>
           <Elements stripe={stripePromise} options={options}>
             <CheckoutForm amount={amount}/>
           </Elements>
-        </Modal>
+        </Modal> )}</>
       ) : <></>}
     </div>
   );

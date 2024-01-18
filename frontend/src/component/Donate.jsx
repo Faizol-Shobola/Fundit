@@ -2,8 +2,15 @@ import React from 'react';
 import CountUp from 'react-countup';
 
 import jsonData from '../Api/data.json';
+import CustomShareButton from './CustomShareButton';
 
 const Donate = ({children}) => {
+
+    const shareData = {
+        text: "Check out GeeksforGeeks!",
+        url: "https://www.geeksforgeeks.org",
+        title: "GeeksforGeeks",
+    };
 
     const totalGoal = jsonData.donationStatus.goalAmount;
     const moneyRealized = jsonData.donationStatus.amountRealized;
@@ -122,9 +129,7 @@ const Donate = ({children}) => {
         </div>
 
         <div className="grid grid-cols-1 gap-4">
-            <a className="btn-outline block" href="/">
-            Share
-            </a>
+            <CustomShareButton shareData={shareData} buttonText="Share" />
 
             <a className="btn" href="/">
             Donate
