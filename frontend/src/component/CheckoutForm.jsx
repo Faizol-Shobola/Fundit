@@ -22,7 +22,7 @@ const CheckoutForm = ({amount}) => {
     const result = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "https://funddit.netlify.app", // Replace with your return URL
+        return_url: "https://fundit.vercel.app/", // Replace with your return URL
       },
     });
 

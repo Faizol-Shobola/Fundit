@@ -21,6 +21,7 @@ const Form = () => {
 
   const [clientSecret, setClientSecret] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [donate, setDonate] = useState(false);
 
    const handleCurrencyChange = (event) => {
      setCurrency(event.target.value);
@@ -29,6 +30,7 @@ const Form = () => {
    const handleCloseModal = () => {
      setIsModalOpen(false);
      setClientSecret("")
+     setDonate(false)
    };
 
    const handleAmountChange = (event) => {
@@ -61,6 +63,7 @@ const Form = () => {
       .then((data) => {
         setClientSecret(data.clientSecret);
         setIsModalOpen(true);
+        setDonate(true);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -109,9 +112,16 @@ const Form = () => {
         </div>
         <button
           type="submit"
-          className="inline-block border w-full border-white bg-white px-12 py-3 text-base font-medium text-black transition hover:bg-transparent hover:text-white"
+          className="flex justify-center border w-full border-white bg-white px-12 py-3 text-base font-medium text-black transition hover:bg-transparent hover:text-white"
         >
-          {" "}
+          {donate && (
+            <svg
+              class="animate-spin h-5 w-5 mr-3 bg-black text-white z-10"
+              viewBox="0 0 24 24"
+            >
+              {" "}
+            </svg>
+          )}
           Donate now
         </button>
         {error && <p className="text-red-500">{error}</p>}
