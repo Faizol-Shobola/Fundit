@@ -7,16 +7,19 @@ import { Faq } from "./component/Faq";
 import Donate from "./component/Donate";
 import Footer from "./component/Footer";
 import Reward from "./component/Reward";
-import notify from './testnotification'
+// import notify from './testnotification'
+// import Notification from "./component/Alert/Notification";
+import useNotifyReward from "./Hooks/useNotifyReward";
 
 function App() {
 
-  const handleClick = () => {
-    notify("This is a dynamic message!", {
-      title: "Dynamic Title",
-      icon: "💰",
-    });
-  };
+  // const handleClick = () => {
+  //   notify("This is a dynamic message!", {
+  //     title: "Dynamic Title",
+  //     icon: "💰",
+  //   });
+  // };
+  useNotifyReward();
 
 
   return (
@@ -41,7 +44,7 @@ function App() {
         <div className="col-span-5 lg:col-span-2 row-span-1  lg:sticky top-3 py-4">
           <Donate>
           <div>
-            <button onClick={handleClick}>Make me a toast</button>
+            {/* <button onClick={}>Make me a toast</button> */}
           </div>
           </Donate>
         </div>
