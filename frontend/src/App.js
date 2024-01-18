@@ -1,12 +1,12 @@
 import "./App.css";
+import toast, { Toaster } from "react-hot-toast";
+
 import Header from "./component/Header";
 import Banner from "./component/Banner";
 import { Faq } from "./component/Faq";
 import Donate from "./component/Donate";
 import Footer from "./component/Footer";
 import Reward from "./component/Reward";
-import toast, { Toaster } from "react-hot-toast";
-
 // const notify = () => toast('Here is your toast.');
 const notify = () => {
 
