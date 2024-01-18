@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors({origin: 'https://funddit.netlify.app'}))
+app.use(cors({origin: 'https://fundit.vercel.app'}))
 
 app.post("/create-payment-intent", async (req, res) => {
   try {
