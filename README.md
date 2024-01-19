@@ -29,11 +29,11 @@ This section of the documentation details the backend setup of "Fundit," which i
 
 **Environment Setup:**
 - The backend requires a `.env` file in its root directory.
-- The `.env` file should define the `SECRET_KEY` for our stripe account.
+- The `.env` file should define the `STRIPE_SECRET_KEY` for our stripe account secret key.
 
 **CORS Configuration:**
 - The server is configured with CORS to allow requests from the hosted frontend URL.
-- The frontend URL is passed as an argument to the CORS function for security and to enable cross-origin requests.
+- The frontend URL is a value to the object key `origin` `{origin: frontend URL}` and the object is passed as an argument to the CORS function for security and to enable cross-origin requests.
 
 **Running the Backend:**
 1. Navigate to the backend directory.
