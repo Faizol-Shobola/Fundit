@@ -1,5 +1,8 @@
 // Form.js
 import React, { useState } from "react";
+
+const dotenv require("dotenv").confog()
+
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 
@@ -7,9 +10,7 @@ import jsonData from "../Api/data.json";
 import CheckoutForm from "./CheckoutForm";
 import Modal from "./Modals/PaymentModal";
 
-const stripePromise = loadStripe(
-  "pk_test_51OZWnDJsGQtU97WF9YYRFAkpgVcxkwIth2BVIstxhSqWmOAHMBUiG9JtwaL4fTTkeznEH5aPd6lWKZMcBjjxtg4s00YeRTY7Gj"
-);
+const stripePromise = loadStripe(process.env.REACT_APP_PUBLIC_KEY);
 
 const Form = () => {
   const { donationCTA } = jsonData;
