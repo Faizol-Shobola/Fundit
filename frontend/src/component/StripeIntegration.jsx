@@ -1,7 +1,4 @@
-// Form.js
 import React, { useState } from "react";
-
-const dotenv = require("dotenv").config();
 
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
