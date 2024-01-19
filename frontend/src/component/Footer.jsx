@@ -44,8 +44,7 @@ const Footer = () => {
                 </div>
 
                 <p className="mx-auto text-sm md:text-base max-w-md text-center leading-relaxed text-gray-600">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa cum
-                    itaque neque.
+                    Our platform is dedicated to supporting diverse fundraising initiatives. From advancing community projects to launching creative ventures, we provide a dynamic, user-friendly space for impactful fundraising. Join us in making a difference, one campaign at a time. Connect, contribute, and celebrate the power of community with Fundit. in
                 </p>
 
                 <ul className="flex text-sm md:text-base flex-wrap justify-center gap-8 md:gap-12">
