@@ -18,7 +18,7 @@ The "Fundit" frontend is a React application designed for fundraising activities
 **Structure:**
 - Standard React app structure.
 - UI elements for fundraising are key components.
-- All data in the fronend are served by a `data.json` file located in the `Api` folder.
+- All data in the frontend are served by a `data.json` file located in the `Api` folder.
 
 ---
 
