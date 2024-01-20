@@ -27,13 +27,10 @@ const CheckoutForm = ({ amount }) => {
       return;
     }
 
-    console.log("Processing payment..."); // Debug: Check if this logs
     const result = await stripe.confirmPayment({
       elements,
       confirmParams: { return_url: "https://fundit-3xo.pages.dev" },
     });
-
-    console.log("Payment result:", result); // Debug: Log result
 
     if (result.error) {
       setError(result.error.message);
@@ -41,7 +38,6 @@ const CheckoutForm = ({ amount }) => {
       result.paymentIntent &&
       result.paymentIntent.status === "succeeded"
     ) {
-      console.log("Payment successful"); // Debug: Check if this logs
       setPaymentSuccess(true);
     }
   };
