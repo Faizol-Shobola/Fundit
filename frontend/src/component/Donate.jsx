@@ -8,7 +8,7 @@ const Donate = ({children}) => {
 
   const shareData = {
     text: "A Flexible fund raising platform",
-    url: "https://fundit.vercel.app",
+    url: "https://fundit-3xo.pages.dev",
     title: "Fundit - A Flexible fund raising platform",
   };
 
