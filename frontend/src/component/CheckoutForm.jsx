@@ -29,9 +29,15 @@ const CheckoutForm = ({amount}) => {
 
     if (result.error) {
       setError(result.error.message);
-    } else {
-      // The PaymentElement handles the rest of the payment flow, including redirecting to your return URL.
+    } else if (
+      result.paymentIntent &&
+      result.paymentIntent.status === "succeeded"
+    ) {
       setPaymentSuccess(true);
+      // Redirect after showing success message for 2 seconds
+      setTimeout(() => {
+        window.location.href = "http://localhost:3000/success";
+      }, 2000);
     }
   };
 
