@@ -43,3 +43,11 @@ This section of the documentation details the backend setup of "Fundit," which i
 **Server Functionality:**
 - Manages API requests and processes donations.
 - Ensures secure communication with the frontend.
+
+---
+
+**Test Card for Stripe Payment**
+- Card Number -  4242 4242 4242 4242
+- Expiry Date - 12/25 (or any other date)
+- CVV - 573 (or any random 3 digit number)
+
