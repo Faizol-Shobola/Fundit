@@ -21,7 +21,7 @@ const CheckoutForm = ({amount}) => {
     const result = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "https://fundit.vercel.app/", // Replace with your return URL
+        return_url: "https://fundit-3xo.pages.dev", // Replace with your return URL
       },
     });  
 
