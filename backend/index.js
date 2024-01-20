@@ -12,7 +12,11 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors({origin: 'https://fundit.vercel.app'}))
+// app.use(cors({origin: 'https://fundit.vercel.app'}))
+app.use(cors({
+  origin: ['https://fundit.vercel.app', 'https://fundit-3xo.pages.dev']
+}));
+
 
 app.post("/create-payment-intent", async (req, res) => {
   try {
