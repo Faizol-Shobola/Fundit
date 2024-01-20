@@ -65,7 +65,7 @@ const Header = () => {
           </button>
 
           {/* Mobile Nav Menu */}
-          <nav aria-label="Global" className={`fixed flex flex-col items-center p-3 justify-start top-0 right-0 w-3/4 h-dvh bg-white z-10 translate-x-full ${isMenuOpen ? 'open' : 'closed'}`}>
+          <nav aria-label="Global" className={`fixed flex-col items-center p-3 justify-start top-0 right-0 w-3/4 h-dvh bg-white z-10 translate-x-full md:hidden ${isMenuOpen ? 'open flex' : 'closed hidden'}`}>
             {/* Close button inside the menu */}
             <button onClick={toggleMenu} className="self-end p-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
