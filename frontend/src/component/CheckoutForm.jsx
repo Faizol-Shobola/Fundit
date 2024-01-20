@@ -36,7 +36,7 @@ const CheckoutForm = ({amount}) => {
       setPaymentSuccess(true);
       // Redirect after showing success message for 2 seconds
       setTimeout(() => {
-        window.location.href = "http://localhost:3000/success";
+        window.location.href = "https://fundit-3xo.pages.dev";
       }, 2000);
     }
   };
