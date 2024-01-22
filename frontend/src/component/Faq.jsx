@@ -51,7 +51,7 @@ export const Faq = () => {
   const { faq } = jsonData;
 
   // Constants for messages
-  const SUCCESS_MESSAGE = "Thanks, we'll get back in a while";
+  const SUCCESS_MESSAGE = "Message sent, we'll get back in a while";
   const EMAIL_ERROR_MESSAGE = "Please enter a valid email address.";
   const QUESTION_ERROR_MESSAGE = "Please enter your question.";
 
