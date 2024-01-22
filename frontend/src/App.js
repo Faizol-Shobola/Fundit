@@ -12,27 +12,19 @@ import Reward from "./component/Reward";
 import useNotifyReward from "./Hooks/useNotifyReward";
 import Modal from "./component/Modals/Modal";
 import PaymentSuccess from "./component/PaymentSuccess";
-
-
+import PaymentFailure from "./component/PaymentFailure";
 
 function App() {
-
-  const [paymentStatus, setPaymentStatus] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const [status, setStatus] = useState("");
 
   // Confirm if the payment was successful
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
-    const status = searchParams.get("redirect_status");
-
-    if (status === "succeeded") {
-      setPaymentStatus(true);
-    } else {
-      setPaymentStatus(false);
-    }
+    setStatus(searchParams.get("redirect_status"));
   }, [location]);
-
 
   // Function to clear query parameters
   const clearQueryParams = () => {
@@ -41,21 +33,25 @@ function App() {
 
   // close payment success Modal handler
   const handleCloseModal = () => {
-    clearQueryParams()
+    clearQueryParams();
   };
 
   useNotifyReward();
 
   return (
     <section className="scroll-smooth transition">
-      {
-        // Display the Modal if payment was successful
-        paymentStatus && (
-          <Modal onClose={handleCloseModal}>
+    {status && (
+      <Modal onClose={handleCloseModal}>
+        {
+          // Display the appropriate component based on the payment status
+          status === "succeeded" ? (
             <PaymentSuccess />
-          </Modal>
-        )
-      }
+          ) : status === "failed" ? (
+            <PaymentFailure />
+          ) : null
+        }
+      </Modal> )}
+
       {/* Render the page */}
       <div className="col-span-5">
         <Header />
