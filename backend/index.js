@@ -1,9 +1,8 @@
-
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors")
+const cors = require("cors");
 
-require('dotenv').config()
+require("dotenv").config();
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
@@ -12,11 +11,10 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors({origin: 'https://fundit-3xo.pages.dev'}))
+app.use(cors({ origin: "http://localhost:3000" }));
 // app.use(cors({
 //   origin: ['https://fundit.vercel.app', 'https://fundit-3xo.pages.dev']
 // }));
-
 
 app.post("/create-payment-intent", async (req, res) => {
   try {

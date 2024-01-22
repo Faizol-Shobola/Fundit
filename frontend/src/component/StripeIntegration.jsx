@@ -5,7 +5,7 @@ import { loadStripe } from "@stripe/stripe-js";
 
 import jsonData from "../Api/data.json";
 import CheckoutForm from "./CheckoutForm";
-import Modal from "./Modals/PaymentModal";
+import Modal from "./Modals/Modal";
 
 const stripePromise = loadStripe(process.env.REACT_APP_PUBLIC_KEY);
 
@@ -43,29 +43,33 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setDonate(true);
-
+    
     if (amount === "") {
       setError("Please enter a valid amount");
+
+    } else {
+      setDonate(true);
+      
+      fetch("http://localhost:8000/create-payment-intent", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // Make sure to replace this with the actual amount and currency from your form
+        body: JSON.stringify({ amount, currency }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setDonate(true);
+          setClientSecret(data.clientSecret);
+          setIsModalOpen(true);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+
     }
 
-    fetch("https://fundit-production.up.railway.app/create-payment-intent", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // Make sure to replace this with the actual amount and currency from your form
-      body: JSON.stringify({ amount, currency }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setDonate(true);
-        setClientSecret(data.clientSecret);
-        setIsModalOpen(true);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
   };
 
   const options = {
