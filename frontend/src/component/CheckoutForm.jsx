@@ -20,7 +20,7 @@ const CheckoutForm = ({ amount }) => {
     setIsProcessing(true)
     const result = await stripe.confirmPayment({
       elements,
-      confirmParams: { return_url: "http://localhost:3000" },
+      confirmParams: { return_url: "https://fundit-3xo.pages.dev" },
     });
 
     if (result.error) {

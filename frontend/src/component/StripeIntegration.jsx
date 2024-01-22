@@ -50,7 +50,7 @@ const Form = () => {
     } else {
       setDonate(true);
       
-      fetch("http://localhost:8000/create-payment-intent", {
+      fetch("https://fundit-production.up.railway.app/create-payment-intent", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
