@@ -1,5 +1,5 @@
 import { useState } from "react";
-import jsonData from '../Api/data.json';
+import jsonData from "../Api/data.json";
 
 const Item = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,11 +43,46 @@ const Item = ({ title, children }) => {
 };
 
 export const Faq = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    
-    const { faq } = jsonData;
+  const [isOpen, setIsOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [question, setQuestion] = useState("");
+  const [status, setStatus] = useState("");
 
-  
+  const { faq } = jsonData;
+
+  // Constants for messages
+  const SUCCESS_MESSAGE = "Thanks, we'll get back in a while";
+  const EMAIL_ERROR_MESSAGE = "Please enter a valid email address.";
+  const QUESTION_ERROR_MESSAGE = "Please enter your question.";
+
+  // validate email
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email validation regex
+    return regex.test(email);
+  };
+
+  // more queries handler
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus("");
+
+    if (!validateEmail(email)) {
+      setStatus(EMAIL_ERROR_MESSAGE);
+      return;
+    }
+
+    if (question.trim() === "") {
+      setStatus(QUESTION_ERROR_MESSAGE);
+      return;
+    }
+    
+    setStatus(SUCCESS_MESSAGE);
+
+    // Clear form fields after submission
+    setEmail("");
+    setQuestion("");
+  };
+
   return (
     // <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:py-16">
     <div class="max-w-xl sm:mx-auto lg:max-w-2xl px-4">
@@ -75,9 +110,7 @@ export const Faq = () => {
             className="flex items-center justify-between w-full p-4 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <p className="text-left text-lg font-medium">
-              Subscribe to the mailing list
-            </p>
+            <p className="text-left text-lg font-medium">Have any queries?</p>
             <div className="flex items-center justify-center w-8 h-8 border rounded-full">
               <svg
                 viewBox="0 0 24 24"
@@ -99,7 +132,7 @@ export const Faq = () => {
           </button>
           {isOpen && (
             <div className="p-4 pt-0">
-              <form action="#" className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-4">
                   <label htmlFor="email" className="sr-only">
                     Email
@@ -109,6 +142,8 @@ export const Faq = () => {
                     type="email"
                     placeholder="Email address"
                     className="w-full border border-black bg-white p-3 text-gray-700 shadow-sm transition"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
 
                   <label htmlFor="email" className="sr-only">
@@ -118,8 +153,9 @@ export const Faq = () => {
                   <textarea
                     placeholder="What is your question.."
                     className="w-full border border-black bg-white p-3 text-gray-700 shadow-sm transition"
-                  >
-                  </textarea>
+                    value={question}
+                    onChange={(e) => setQuestion(e.target.value)}
+                  ></textarea>
                 </div>
 
                 <button
@@ -128,6 +164,15 @@ export const Faq = () => {
                 >
                   <span className="text-sm font-medium"> Submit </span>
                 </button>
+                {status && (
+                  <p
+                    className={`text-${
+                      status === SUCCESS_MESSAGE ? "green" : "red"
+                    }-500`}
+                  >
+                    {status}
+                  </p>
+                )}
               </form>
             </div>
           )}
