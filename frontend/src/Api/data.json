@@ -1,70 +1,69 @@
 {
-    "donation": {
-      "title": "Hearts United: A Home for Every Child Fund",
-      "content": "Hearts United is dedicated to providing a loving home for every child. Your monetary contributions to our 'A Home for Every Child Fund' enable us to support orphaned and vulnerable children by providing shelter, education, and a nurturing environment. Join us in building a future filled with hope for these young hearts."
-    },
-    "donationStatus": {
-      "goalAmount": 5000,
-      "amountRealized": 3250,
-      "donorsCount": 251
-    },
-    "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Get answers to common questions.",
-      "faqs": [
-        {
-          "question": "How can I donate?",
-          "answer": "You can securely contribute funds through various payment methods, ensuring your support reaches children in need of a loving home in."
-        },
-        {
-          "question": "Can I sponsor a specific child with my donation?",
-          "answer": "While we don't currently offer individual child sponsorship, your contribution will collectively support our efforts to provide a home, education, and care for all the children under the 'Hearts United' program."
-        },
-        {
-          "question": "How is the donated money used to help orphaned children?",
-          "answer": "Donations are utilized to cover essential needs such as housing, education, healthcare, and emotional support for orphaned and vulnerable children. Our goal is to create a stable and loving environment for each child's well-being."
-        },
-        {
-          "question": "Are there updates on the impact of my donations?",
-          "answer": "Yes, we regularly provide updates on the impact of donations through our website and newsletters. You'll have the opportunity to see how your contributions are making a positive difference in the lives of the children we serve."
-        }
-      ],
-      "formLink": "/donate"
-    },
-    "donationCTA": {
-      "title": "Ready to donate?",
-      "inputBox": {
-        "currencySelect": ["USD", "EUR", "GBP", "CAD"],
-        "processButton": "Donate Now"
-      }
-    },
-    "rewards": [
+  "donation": {
+    "title": "Hearts United: A Home for Every Child Fund",
+    "content": "Hearts United, a beacon of hope in the lives of children in need, passionately pursues its mission to ensure a loving home for every child. When you donate to our 'A Home for Every Child Fund,' your generosity transcends mere monetary value. You become a crucial part of a movement that uplifts orphaned and vulnerable children, offering more than just shelter – you contribute to their holistic development. Our efforts extend to providing quality education, essential healthcare, and emotional support, creating a nurturing environment where these young souls can thrive. Your involvement does not just build homes; it helps in sculpting promising futures, instilling values, and empowering these children to dream big. By joining us, you're not just giving a donation; you're giving these children the gift of a brighter tomorrow. Together, let's turn the tide of despair into waves of hope, transforming the lives of these young hearts one by one."
+  },
+  "donationStatus": {
+    "goalAmount": 5000,
+    "amountRealized": 3250,
+    "donorsCount": 251
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Get answers to common questions.",
+    "faqs": [
       {
-        "title": "Bronze Supporter",
-        "donationRange": "$10 - $59",
-        "content": "Receive a thank-you email and recognition on our website."
+        "question": "How can I donate?",
+        "answer": "You can securely contribute funds through various payment methods, ensuring your support reaches children in need of a loving home in."
       },
       {
-        "title": "Silver Supporter",
-        "donationRange": "$60 - $199",
-        "content": "In addition to Bronze benefits, get a personalized certificate."
+        "question": "Can I sponsor a specific child with my donation?",
+        "answer": "While we don't currently offer individual child sponsorship, your contribution will collectively support our efforts to provide a home, education, and care for all the children under the 'Hearts United' program."
       },
       {
-        "title": "Gold Supporter",
-        "donationRange": "$200 - $499",
-        "content": "In addition to Silver benefits, receive a special gift."
+        "question": "How is the donated money used to help orphaned children?",
+        "answer": "Donations are utilized to cover essential needs such as housing, education, healthcare, and emotional support for orphaned and vulnerable children. Our goal is to create a stable and loving environment for each child's well-being."
       },
       {
-        "title": "Platinum Supporter",
-        "donationRange": "$500+",
-        "content": "In addition to Gold benefits, join our exclusive supporters club."
+        "question": "Are there updates on the impact of my donations?",
+        "answer": "Yes, we regularly provide updates on the impact of donations through our website and newsletters. You'll have the opportunity to see how your contributions are making a positive difference in the lives of the children we serve."
       }
     ],
-    "socialLinks": {
-      "facebook": "https://www.facebook.com/yourpage",
-      "instagram": "https://www.instagram.com/yourpage",
-      "twitter": "https://www.twitter.com/yourpage",
-      "liveChat": "https://www.livechatlink.com"
+    "formLink": "/donate"
+  },
+  "donationCTA": {
+    "title": "Ready to donate?",
+    "inputBox": {
+      "currencySelect": ["USD", "EUR", "GBP", "CAD"],
+      "processButton": "Donate Now"
     }
+  },
+  "rewards": [
+    {
+      "title": "Bronze Supporter",
+      "donationRange": "$10 - $59",
+      "content": "Receive a thank-you email and recognition on our website."
+    },
+    {
+      "title": "Silver Supporter",
+      "donationRange": "$60 - $199",
+      "content": "In addition to Bronze benefits, get a personalized certificate."
+    },
+    {
+      "title": "Gold Supporter",
+      "donationRange": "$200 - $499",
+      "content": "In addition to Silver benefits, receive a special gift."
+    },
+    {
+      "title": "Platinum Supporter",
+      "donationRange": "$500+",
+      "content": "In addition to Gold benefits, join our exclusive supporters club."
+    }
+  ],
+  "socialLinks": {
+    "facebook": "https://www.facebook.com/yourpage",
+    "instagram": "https://www.instagram.com/yourpage",
+    "twitter": "https://www.twitter.com/yourpage",
+    "liveChat": "https://www.livechatlink.com"
   }
-  
+}
