@@ -123,7 +123,7 @@ const Form = () => {
         </div>
 
         {/* Basis of donation */}
-        <fieldset className="w-full grid grid-cols-2 gap-4">
+        <fieldset className="w-full grid grid-cols-1  sm:grid-cols-2 gap-4">
           <legend className="sr-only">Delivery</legend>
           <div>
             <input
@@ -142,7 +142,7 @@ const Form = () => {
             >
               <div className="flex items-center justify-between">
                 <p className="text-white">One Time</p>
-                <div className="flex gap-2 items-center text-gray-500">
+                <div className="flex gap-2 items-center text-gray-300">
                   <p className="text-base font-semibold capitalize">
                     {formatNumber(amount)} {currency}
                   </p>
@@ -179,7 +179,7 @@ const Form = () => {
             >
               <div className="flex items-center justify-between">
                 <p className="text-white">Monthly</p>
-                <div className="flex gap-2 items-center text-gray-500">
+                <div className="flex gap-2 items-center text-gray-300">
                   <p className="text-base font-semibold capitalize">
                     {formatNumber(amount)} {currency}
                   </p>
@@ -202,7 +202,7 @@ const Form = () => {
 
           
         </fieldset>
-        <p className="text-base text-gray-500 text-left">
+        <p className="text-base text-gray-300 text-left">
           {donationOption === "Monthly"
             ? "You have selected a monthly donation. We'll remind you on 15th and 25th of every month, Thanks for donating!"
             : donationOption === "OneTime"
