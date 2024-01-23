@@ -22,7 +22,7 @@ const PaymentSuccess = () => {
           </svg>
         </span>
 
-        <div className="flex-1">
+        <div className="flex-1 text-center">
           <strong className="block font-medium text-gray-900">Payment Successful!</strong>
           <p>Thanks for your Donation</p>
         </div>
