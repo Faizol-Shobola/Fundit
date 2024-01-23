@@ -84,7 +84,7 @@ export const Faq = () => {
   };
 
   return (
-    // <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:py-16">
+
     <div class="max-w-xl sm:mx-auto lg:max-w-2xl px-4">
       <div class="flex flex-col my-10 lg:mb-10 lg:mt-5">
         <div class="max-w-xl lg:max-w-2xl">
@@ -166,9 +166,9 @@ export const Faq = () => {
                 </button>
                 {status && (
                   <p
-                    className={`text-${
-                      status === SUCCESS_MESSAGE ? "green" : "red"
-                    }-500`}
+                    className={
+                      status === SUCCESS_MESSAGE ? "text-green-500" : "text-red-500"
+                    }
                   >
                     {status}
                   </p>
@@ -179,6 +179,6 @@ export const Faq = () => {
         </div>
       </div>
     </div>
-    // </div>
+
   );
 };

@@ -141,8 +141,8 @@ const Form = () => {
               className="block cursor-pointer border border-white bg-transparent p-4 text-sm font-medium shadow-sm peer-checked:border-white-500 peer-checked:ring-1 peer-checked:ring-white-500"
             >
               <div className="flex items-center justify-between">
-                <p className="text-white">One Time</p>
-                <div className="flex gap-2 items-center text-gray-300">
+                <p className="text-gray-200">One Time</p>
+                <div className="flex gap-2 items-center text-gray-400">
                   <p className="text-base font-semibold capitalize">
                     {formatNumber(amount)} {currency}
                   </p>
@@ -178,8 +178,8 @@ const Form = () => {
               className="block cursor-pointer border border-white bg-transparent p-4 text-sm font-medium shadow-sm peer-checked:border-white-500 peer-checked:ring-1 peer-checked:ring-white-500"
             >
               <div className="flex items-center justify-between">
-                <p className="text-white">Monthly</p>
-                <div className="flex gap-2 items-center text-gray-300">
+                <p className="text-gray-200">Monthly</p>
+                <div className="flex gap-2 items-center text-gray-400">
                   <p className="text-base font-semibold capitalize">
                     {formatNumber(amount)} {currency}
                   </p>
@@ -202,9 +202,9 @@ const Form = () => {
 
           
         </fieldset>
-        <p className="text-base text-gray-300 text-left">
+        <p className="text-base text-gray-400 text-left">
           {donationOption === "Monthly"
-            ? "You have selected a monthly donation. We'll remind you on 15th and 25th of every month, Thanks for donating!"
+            ? "You have selected a monthly donation. We'll remind you on 1st and 15th of every month, Thanks for donating!"
             : donationOption === "OneTime"
             ? "You have selected a one-time donation. Thanks for donating!"
             : null}
