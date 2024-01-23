@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {
   useStripe,
   useElements,
+  LinkAuthenticationElement,
   PaymentElement,
 } from "@stripe/react-stripe-js";
 
@@ -33,13 +34,14 @@ const CheckoutForm = ({ amount }) => {
       {!elements ? (
         <div>"Please wait, preparing secure payment...</div> // Display loading text when elements are not ready
       ) : (
-        <>
+        <div className="flex flex-col gap-2">
+          <LinkAuthenticationElement />
           <PaymentElement />
           <button disabled={!stripe} className="btn mt-5 w-full">
             {isProcessing ? "Processing..." : "Pay"}
           </button>
           {error && <div className="text-red-500">{error}</div>}
-        </>
+        </div>
       )}
     </form>
   );
